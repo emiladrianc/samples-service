@@ -1,0 +1,75 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "Samples APIs"
+  },
+  "basePath" : "/samplesService/api",
+  "tags" : [ {
+    "name" : "Samples"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/v1/samples" : {
+      "get" : {
+        "tags" : [ "Samples" ],
+        "summary" : "Lists all sample.",
+        "description" : "",
+        "operationId" : "get",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "List all samples.",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Sample"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/samples/{id}" : {
+      "get" : {
+        "tags" : [ "Samples" ],
+        "summary" : "get sample.",
+        "description" : "",
+        "operationId" : "getById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Sample details.",
+            "schema" : {
+              "$ref" : "#/definitions/Sample"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Sample" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Id"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name"
+        }
+      },
+      "description" : "Sample"
+    }
+  }
+}
