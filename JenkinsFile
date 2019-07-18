@@ -1,4 +1,4 @@
-@Library('test@0.0.1') _
+@Library('test@0.0.2') _
 
 continuousBuild {
     runUnitTests = true
