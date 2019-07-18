@@ -2,6 +2,6 @@
 
 continuousBuild {
     runUnitTests = true
-		showUnitTestsReport = true
+    showUnitTestsReport = true
     runSonarQube = false
 }
