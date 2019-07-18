@@ -1,0 +1,7 @@
+@Library('test') _
+
+continuousBuild {
+    runUnitTests = true
+	showUnitTestsReport = true
+    runSonarQube = false
+}
